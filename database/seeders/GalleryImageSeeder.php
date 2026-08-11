@@ -1,0 +1,371 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\Destination;
+use App\Models\GalleryImage;
+use Illuminate\Database\Seeder;
+
+class GalleryImageSeeder extends Seeder
+{
+    public function run(): void
+    {
+        $destinationIds = Destination::pluck('id', 'slug');
+        $img = fn (string $file) => "/images/destinations/{$file}";
+
+        $images = [
+            [
+                'title' => 'Amboseli calf & Kilimanjaro',
+                'caption' => 'A young elephant on the track beneath snow-capped Mount Kilimanjaro.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'amboseli',
+                'file' => 'amboseli-calf.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'title' => 'Amboseli elephant herd',
+                'caption' => 'Elephants grazing on green plains with Kilimanjaro behind.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'amboseli',
+                'file' => 'amboseli-herd-green.png',
+                'is_tall' => true,
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'title' => 'Amboseli open plains',
+                'caption' => 'An elephant herd crossing Amboseli with Kilimanjaro on the horizon.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'amboseli',
+                'file' => 'amboseli-herd-plains.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'title' => 'Amboseli elephant trek',
+                'caption' => 'Elephants walking the dusty Amboseli flats beneath Kilimanjaro.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'amboseli',
+                'file' => 'amboseli-trek.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 1,
+            ],
+            [
+                'title' => 'Maasai Mara balloon safari',
+                'caption' => 'Hot air balloons over wildebeest herds on the Mara plains at golden hour.',
+                'category_key' => 'on-safari',
+                'destination_slug' => 'maasai-mara',
+                'file' => 'maasai-mara-balloons.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'title' => 'Great Migration crossing',
+                'caption' => 'Wildebeest and zebra at the river during the Great Migration.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'maasai-mara',
+                'file' => 'maasai-mara-migration.png',
+                'is_tall' => true,
+                'is_featured' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'title' => 'Maasai Mara game drive',
+                'caption' => 'Safari vehicle among wildebeest on the open savannah.',
+                'category_key' => 'on-safari',
+                'destination_slug' => 'maasai-mara',
+                'file' => 'maasai-mara-safari.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'title' => 'Balloon over the Mara',
+                'caption' => 'A colourful hot air balloon above grazing wildebeest and zebra.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'maasai-mara',
+                'file' => 'maasai-mara-balloon.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 2,
+            ],
+            [
+                'title' => 'Samburu elephant',
+                'caption' => 'Wildlife unique to northern Kenya — elephants along the Samburu plains.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'samburu',
+                'file' => 'samburu-elephant.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 3,
+            ],
+            [
+                'title' => 'Samburu buffalo',
+                'caption' => 'Cape buffalo in the heart of Samburu National Reserve.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'samburu',
+                'file' => 'samburu-buffalo.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 3,
+            ],
+            [
+                'title' => 'Samburu wildebeest',
+                'caption' => 'Wildebeest on the green plains of northern Kenya.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'samburu',
+                'file' => 'samburu-wildebeest.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 3,
+            ],
+            [
+                'title' => 'Tsavo buffalo at the waterhole',
+                'caption' => 'A vast buffalo herd gathered at a red-earth waterhole in Tsavo.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'tsavo-east',
+                'file' => 'tsavo-buffalo.png',
+                'is_tall' => true,
+                'is_featured' => true,
+                'sort_order' => 4,
+            ],
+            [
+                'title' => 'Tsavo zebras',
+                'caption' => 'Zebras drinking at a watering hole on Tsavo\'s distinctive red soil.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'tsavo-east',
+                'file' => 'tsavo-zebras.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 4,
+            ],
+            [
+                'title' => 'Tsavo green hills',
+                'caption' => 'Lush volcanic hills and savannah across Tsavo West.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'tsavo-west',
+                'file' => 'tsavo-hills.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 5,
+            ],
+            [
+                'title' => 'Tsavo West landscape',
+                'caption' => 'Red safari tracks, green plains and dramatic mountains in Tsavo West.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'tsavo-west',
+                'file' => 'tsavo-landscape.png',
+                'is_tall' => true,
+                'is_featured' => true,
+                'sort_order' => 5,
+            ],
+            [
+                'title' => 'Lake Nakuru shore',
+                'caption' => 'Rhinos, flamingos and exceptional birdlife on the alkaline lake.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'lake-nakuru',
+                'file' => 'lake-nakuru.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 5,
+            ],
+            [
+                'title' => 'Lake Naivasha boat safari',
+                'caption' => 'Freshwater lake life — hippos, birdwatching and scenic boat rides.',
+                'category_key' => 'on-safari',
+                'destination_slug' => 'lake-naivasha',
+                'file' => 'lake-naivasha.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 6,
+            ],
+            [
+                'title' => 'Hell\'s Gate Fischer\'s Tower',
+                'caption' => 'The iconic volcanic rock tower rising above Hell\'s Gate plains.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'hells-gate',
+                'file' => 'hells-gate-tower.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 7,
+            ],
+            [
+                'title' => 'Hell\'s Gate gorge',
+                'caption' => 'Walking through the dramatic sandstone gorge at Hell\'s Gate.',
+                'category_key' => 'on-safari',
+                'destination_slug' => 'hells-gate',
+                'file' => 'hells-gate-gorge.png',
+                'is_tall' => true,
+                'is_featured' => true,
+                'sort_order' => 7,
+            ],
+            [
+                'title' => 'Hell\'s Gate Elsa Gate',
+                'caption' => 'Park headquarters and entrance at Elsa Gate.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'hells-gate',
+                'file' => 'hells-gate-elsa.png',
+                'is_tall' => false,
+                'is_featured' => false,
+                'sort_order' => 7,
+            ],
+            [
+                'title' => 'Mount Kenya valley views',
+                'caption' => 'Lush highland valleys and forested ridges around Mount Kenya.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'mount-kenya',
+                'file' => 'mount-kenya-valley.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 8,
+            ],
+            [
+                'title' => 'Mount Kenya moorland',
+                'caption' => 'Alpine moorland rocks and vegetation on Mount Kenya.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'mount-kenya',
+                'file' => 'mount-kenya-moorland.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 8,
+            ],
+            [
+                'title' => 'Aberdare forests & waterfalls',
+                'caption' => 'A cool, forested safari among mist-covered peaks and rare wildlife.',
+                'category_key' => 'landscapes',
+                'destination_slug' => 'aberdare',
+                'file' => 'aberdare.png',
+                'is_tall' => true,
+                'is_featured' => false,
+                'sort_order' => 9,
+            ],
+            [
+                'title' => 'Diani aerial coastline',
+                'caption' => 'Aerial view of white sand, turquoise reef water and coastal forest at Diani.',
+                'category_key' => 'coast',
+                'destination_slug' => 'diani-beach',
+                'file' => 'diani-aerial.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 10,
+            ],
+            [
+                'title' => 'Diani Beach shore',
+                'caption' => 'Wide white sands and turquoise waters along Diani Beach.',
+                'category_key' => 'coast',
+                'destination_slug' => 'diani-beach',
+                'file' => 'diani-shore.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 10,
+            ],
+            [
+                'title' => 'Diani coastal vista',
+                'caption' => 'Looking down the Diani coastline through casuarina branches.',
+                'category_key' => 'coast',
+                'destination_slug' => 'diani-beach',
+                'file' => 'diani-coast.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 10,
+            ],
+            [
+                'title' => 'Watamu camel ride',
+                'caption' => 'Camels along the white-sand shoreline of Kenya\'s north coast.',
+                'category_key' => 'coast',
+                'destination_slug' => 'watamu-lamu',
+                'file' => 'watamu-camels.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 11,
+            ],
+            [
+                'title' => 'Watamu beach lounge',
+                'caption' => 'Makuti umbrella and sun loungers on powdery white sand.',
+                'category_key' => 'coast',
+                'destination_slug' => 'watamu-lamu',
+                'file' => 'watamu-umbrella.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 11,
+            ],
+            [
+                'title' => 'Watamu coastal resort',
+                'caption' => 'Resort pool and palm-lined beach on the Kenyan coast.',
+                'category_key' => 'coast',
+                'destination_slug' => 'watamu-lamu',
+                'file' => 'watamu-resort.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 11,
+            ],
+            [
+                'title' => 'Watamu palms & ocean',
+                'caption' => 'Palm gardens overlooking turquoise reef waters.',
+                'category_key' => 'coast',
+                'destination_slug' => 'watamu-lamu',
+                'file' => 'watamu-palms.png',
+                'is_tall' => true,
+                'is_featured' => false,
+                'sort_order' => 11,
+            ],
+            [
+                'title' => 'Nairobi National Park',
+                'caption' => 'Wildlife with the capital city skyline as a unique backdrop.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'nairobi-national-park',
+                'file' => 'nairobi-national-park.png',
+                'is_tall' => false,
+                'is_featured' => false,
+                'sort_order' => 12,
+            ],
+            [
+                'title' => 'Giraffe with Nairobi skyline',
+                'caption' => 'A giraffe in Nairobi National Park with the city skyline beyond.',
+                'category_key' => 'wildlife',
+                'destination_slug' => 'nairobi-national-park',
+                'file' => 'nairobi-giraffe-skyline.png',
+                'is_tall' => false,
+                'is_featured' => true,
+                'sort_order' => 12,
+            ],
+            [
+                'title' => 'Nairobi City Tour',
+                'caption' => 'History, culture, architecture and local life in the Green City in the Sun.',
+                'category_key' => 'on-safari',
+                'destination_slug' => 'nairobi-national-park',
+                'file' => 'nairobi-city-tour.png',
+                'is_tall' => false,
+                'is_featured' => false,
+                'sort_order' => 12,
+            ],
+        ];
+
+        $titles = [];
+
+        foreach ($images as $image) {
+            $file = $image['file'];
+            $destinationSlug = $image['destination_slug'];
+            unset($image['file'], $image['destination_slug']);
+
+            $image['thumbnail'] = $img($file);
+            $image['image'] = $img($file);
+            $image['destination_id'] = $destinationSlug ? ($destinationIds[$destinationSlug] ?? null) : null;
+            $image['is_published'] = true;
+
+            $titles[] = $image['title'];
+
+            GalleryImage::updateOrCreate(
+                ['title' => $image['title']],
+                $image
+            );
+        }
+
+        GalleryImage::whereNotIn('title', $titles)->delete();
+    }
+}
