@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title', 'About Us | Moha Boru Safaris Limited')
-@section('description', 'Moha-Boru-Safaris Limited is a Kenyan tours and travel company dedicated to authentic, memorable and sustainable safari experiences across East Africa.')
+@section('description', 'Moha-Boru-Safaris Limited is a Kenyan tours and travel company dedicated to authentic, memorable and sustainable safari experiences across Kenya.')
 
 @section('content')
 <section class="page-hero">
@@ -27,7 +27,7 @@
                     <h2 class="mb-h2 mb-underline">Authentic. Memorable.<br>Sustainable.</h2>
                 </div>
                 <p class="lead-copy" data-reveal data-reveal-delay="1">
-                    Moha-Boru-Safaris Limited is a Kenyan tours and travel company dedicated to providing authentic, memorable, and sustainable safari experiences across East Africa. We specialize in designing customized travel packages that showcase the region’s rich wildlife, breathtaking landscapes, vibrant cultures, and world-renowned national parks.
+                    Moha-Boru-Safaris Limited is a Kenyan tours and travel company dedicated to providing authentic, memorable, and sustainable safari experiences across Kenya. We specialize in designing customized travel packages that showcase the country’s rich wildlife, breathtaking landscapes, vibrant cultures, and world-renowned national parks.
                 </p>
                 <p class="mt-3" style="max-width: 62ch;" data-reveal data-reveal-delay="2">
                     At Moha-Boru-Safaris Limited, we are committed to creating unforgettable travel experiences while promoting wildlife conservation and supporting local communities. Every journey is carefully planned to provide comfort, adventure, and lasting memories.
@@ -46,7 +46,7 @@
                         <i class="bi bi-eye"></i>
                         <div>
                             <div class="k">Our Vision</div>
-                            <div class="v" style="font-size: 0.92rem; font-weight: 400; line-height: 1.55;">To become one of East Africa’s leading safari and travel companies, recognized for excellence, innovation, customer satisfaction, and sustainable tourism practices.</div>
+                            <div class="v" style="font-size: 0.92rem; font-weight: 400; line-height: 1.55;">To become one of Kenya’s leading safari and travel companies, recognized for excellence, innovation, customer satisfaction, and sustainable tourism practices.</div>
                         </div>
                     </div>
                 </div>
@@ -117,7 +117,7 @@
                     <h2 class="mb-h2 mb-underline">What we arrange</h2>
                 </div>
                 <ul class="incl-list included mt-3" data-reveal>
-                    <li><i class="bi bi-check-circle"></i> Wildlife safaris in Kenya and East Africa</li>
+                    <li><i class="bi bi-check-circle"></i> Wildlife safaris across Kenya</li>
                     <li><i class="bi bi-check-circle"></i> Luxury, mid-range, and budget safari packages</li>
                     <li><i class="bi bi-check-circle"></i> Beach holidays</li>
                     <li><i class="bi bi-check-circle"></i> Cultural and community tours</li>

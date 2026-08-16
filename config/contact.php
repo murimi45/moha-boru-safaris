@@ -13,11 +13,11 @@ return [
     |
     */
 
-    'phone_display' => '+254 700 000 000',
-    'phone_link' => '+254700000000',
+    'phone_display' => '+254 712 840 452',
+    'phone_link' => '+254712840452',
 
     // Digits only, international format, no plus sign — required by wa.me
-    'whatsapp' => '254700000000',
+    'whatsapp' => '254712840452',
 
     'email' => 'info@mohaborusafaris.com',
 
@@ -37,6 +37,7 @@ return [
         ['label' => 'Instagram', 'icon' => 'bi-instagram', 'url' => 'https://www.instagram.com/mohaborusafaris'],
         ['label' => 'Facebook', 'icon' => 'bi-facebook', 'url' => 'https://www.facebook.com/boru.moha.2025'],
         ['label' => 'TikTok', 'icon' => 'bi-tiktok', 'url' => 'https://www.tiktok.com/@mohaborusafaris'],
+        ['label' => 'Xiaohongshu', 'icon' => 'bi-bookmark-heart', 'url' => 'https://xhslink.cn/m/4tolu5kmgIp'],
     ],
 
     // Working Google Maps embed for Nairobi (open embed — no API key required)

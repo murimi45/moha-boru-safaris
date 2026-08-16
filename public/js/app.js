@@ -9,11 +9,16 @@
   /* ------------------------------------------------------------------
    * 1. Page loader — brief, elegant, removes itself once DOM is ready
    * ------------------------------------------------------------------ */
-  window.addEventListener('load', function () {
+  var hideLoader = function () {
     var loader = document.getElementById('mb-loader');
-    if (!loader) return;
-    setTimeout(function () { loader.classList.add('is-hidden'); }, 350);
+    if (!loader || loader.classList.contains('is-hidden')) return;
+    loader.classList.add('is-hidden');
+  };
+  window.addEventListener('load', function () {
+    setTimeout(hideLoader, 350);
   });
+  // Safety: never leave the veil up if `load` is delayed (slow images, etc.)
+  setTimeout(hideLoader, 2500);
 
   /* ------------------------------------------------------------------
    * 2. Sticky navbar: transparent-over-hero -> solid on scroll
@@ -38,6 +43,7 @@
         mobileMenu.classList.toggle('is-open', isOpen);
         navbar.classList.toggle('menu-open', isOpen);
         toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggle.setAttribute('aria-label', isOpen ? 'Close menu' : 'Open menu');
         document.body.style.overflow = isOpen ? 'hidden' : '';
         if (isOpen) {
           mobileMenu.removeAttribute('hidden');
@@ -51,7 +57,9 @@
         }
       };
 
-      toggle.addEventListener('click', function () {
+      toggle.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
         setMenuOpen(!mobileMenu.classList.contains('is-open'));
       });
       // Close on link click
@@ -59,6 +67,12 @@
         link.addEventListener('click', function () {
           setMenuOpen(false);
         });
+      });
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
+          setMenuOpen(false);
+        }
       });
     }
   }

@@ -52,7 +52,7 @@
                     </div>
                     <div class="about-media-badge">
                         <div class="num">EA</div>
-                        <div class="cap">Safaris across Kenya &amp; East Africa</div>
+                        <div class="cap">Safaris across Kenya</div>
                     </div>
                 </div>
             </div>
@@ -64,8 +64,8 @@
                 <p class="lead-copy" data-reveal data-reveal-delay="1">
                     Moha-Boru-Safaris Limited is a Kenyan tours and travel company dedicated to
                     providing authentic, memorable, and sustainable safari experiences across
-                    East Africa. We specialize in designing customized travel packages that
-                    showcase the region’s rich wildlife, breathtaking landscapes, vibrant cultures,
+                    Kenya. We specialize in designing customized travel packages that
+                    showcase the country’s rich wildlife, breathtaking landscapes, vibrant cultures,
                     and world-renowned national parks.
                 </p>
                 <p style="max-width: 52ch; margin-top: 1rem;" data-reveal data-reveal-delay="2">

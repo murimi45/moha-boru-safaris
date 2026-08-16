@@ -59,7 +59,11 @@
 /* --------------------------------------------------------------------------
    2. BASE
    -------------------------------------------------------------------------- */
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  overflow-x: clip;
+}
 
 body {
   font-family: var(--font-body);
@@ -70,6 +74,8 @@ body {
   line-height: 1.7;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
+  max-width: 100%;
 }
 
 h1, h2, h3, h4, .font-display {
@@ -251,6 +257,19 @@ textarea:focus-visible, select:focus-visible {
   background: transparent;
   border-bottom: 1px solid transparent;
 }
+.mb-navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-width: 0;
+}
+.mb-navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
 .mb-navbar.is-scrolled {
   padding-block: 1rem;
   background: rgba(255, 255, 255, 0.92);
@@ -264,10 +283,29 @@ textarea:focus-visible, select:focus-visible {
   color: var(--mb-white);
   letter-spacing: 0.01em;
   transition: color var(--dur-med) var(--ease-signature);
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1001;
 }
 .mb-navbar.is-scrolled .brand-mark,
 .mb-navbar.menu-open .brand-mark { color: var(--mb-black); }
 .brand-mark span { color: var(--mb-gold); }
+
+/* Desktop links — hidden on phone/tablet so they cannot force horizontal scroll */
+.mb-nav-desktop {
+  display: none;
+  align-items: center;
+}
+.mb-nav-cta { display: none; }
+
+@media (min-width: 768px) {
+  .mb-nav-cta { display: inline-flex; }
+}
+
+@media (min-width: 992px) {
+  .mb-nav-desktop { display: flex; }
+  .nav-toggle { display: none !important; }
+}
 
 .mb-nav-link {
   font-size: 0.82rem;
@@ -297,17 +335,40 @@ textarea:focus-visible, select:focus-visible {
 .mb-nav-link:hover { color: var(--mb-gold); }
 
 .nav-toggle {
-  width: 26px; height: 18px; position: relative; background: none; border: none;
+  width: 44px;
+  height: 44px;
+  position: relative;
+  z-index: 1001;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  -webkit-tap-highlight-color: transparent;
 }
 .nav-toggle span {
-  position: absolute; left: 0; width: 100%; height: 1.5px;
-  background: var(--mb-white); transition: all var(--dur-fast) ease;
+  position: absolute;
+  left: 50%;
+  width: 22px;
+  height: 1.5px;
+  margin-left: -11px;
+  background: var(--mb-white);
+  transition: all var(--dur-fast) ease;
 }
 .mb-navbar.is-scrolled .nav-toggle span,
 .mb-navbar.menu-open .nav-toggle span { background: var(--mb-black); }
-.nav-toggle span:nth-child(1){ top: 0; }
-.nav-toggle span:nth-child(2){ top: 8px; }
-.nav-toggle span:nth-child(3){ top: 16px; }
+.nav-toggle span:nth-child(1){ top: 14px; }
+.nav-toggle span:nth-child(2){ top: 21px; }
+.nav-toggle span:nth-child(3){ top: 28px; }
+.mb-navbar.menu-open .nav-toggle span:nth-child(1){
+  top: 21px; transform: rotate(45deg);
+}
+.mb-navbar.menu-open .nav-toggle span:nth-child(2){ opacity: 0; }
+.mb-navbar.menu-open .nav-toggle span:nth-child(3){
+  top: 21px; transform: rotate(-45deg);
+}
 
 /* Mobile menu panel */
 .mb-mobile-menu {
@@ -394,6 +455,10 @@ textarea:focus-visible, select:focus-visible {
   margin-top: 1rem;
 }
 .hero-actions { margin-top: 1.75rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-actions .btn-mb {
+  white-space: normal;
+  text-align: center;
+}
 
 .hero-horizon {
   position: absolute; left: 0; right: 0; bottom: 0;
@@ -490,6 +555,19 @@ textarea:focus-visible, select:focus-visible {
   border-top: 1px solid var(--mb-gold);
   border-left: 1px solid var(--mb-gold);
   z-index: -1;
+}
+@media (max-width: 575px) {
+  .about-media-badge {
+    left: 0.75rem;
+    bottom: 0.75rem;
+    padding: 1rem 1.15rem;
+    max-width: min(230px, calc(100% - 1.5rem));
+  }
+  .about-signature-frame {
+    inset: -10px auto auto -10px;
+    width: 64px;
+    height: 64px;
+  }
 }
 
 /* --------------------------------------------------------------------------
@@ -640,9 +718,9 @@ textarea:focus-visible, select:focus-visible {
 @media (max-width: 575px) {
   .services-grid > .service-card,
   .services-grid > a.service-card {
-    flex-basis: 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    flex-basis: calc(100% - 1.75rem) !important;
+    max-width: calc(100% - 1.75rem) !important;
+    width: calc(100% - 1.75rem) !important;
   }
 }
 
@@ -656,9 +734,9 @@ textarea:focus-visible, select:focus-visible {
 @media (max-width: 575px) {
   .contact-cards-grid > .service-card,
   .contact-cards-grid > a.service-card {
-    flex-basis: 100% !important;
-    max-width: 100% !important;
-    width: 100% !important;
+    flex-basis: calc(100% - 1.75rem) !important;
+    max-width: calc(100% - 1.75rem) !important;
+    width: calc(100% - 1.75rem) !important;
   }
 }
 

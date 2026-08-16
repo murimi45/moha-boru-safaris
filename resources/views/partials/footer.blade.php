@@ -5,12 +5,12 @@
             <div class="col-lg-4">
                 <a href="{{ url('/') }}" class="footer-brand d-inline-block mb-3">Moha <span>Boru</span></a>
                 <p style="max-width: 34ch; color: rgba(255,255,255,0.6); font-size: 0.92rem;">
-                    Authentic, memorable and sustainable safari experiences across East Africa —
+                    Authentic, memorable and sustainable safari experiences across Kenya —
                     customized for wildlife, culture, coast and adventure.
                 </p>
                 <div class="social-row">
                     @foreach(config('contact.socials') as $social)
-                        <a href="{{ $social['url'] }}" aria-label="{{ $social['label'] }}"><i class="bi {{ $social['icon'] }}"></i></a>
+                        <a href="{{ $social['url'] }}" aria-label="{{ $social['label'] }}" target="_blank" rel="noopener noreferrer"><i class="bi {{ $social['icon'] }}"></i></a>
                     @endforeach
                 </div>
             </div>
