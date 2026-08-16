@@ -295,28 +295,57 @@ textarea:focus-visible, select:focus-visible {
 .mb-nav-desktop {
   display: none;
   align-items: center;
+  justify-content: center;
+  min-width: 0;
+  flex: 1 1 auto;
 }
 .mb-nav-cta { display: none; }
 
+/* CTA from tablet up — compact in the bar so it never clips the right edge */
 @media (min-width: 768px) {
   .mb-nav-cta { display: inline-flex; }
 }
+.mb-navbar .mb-nav-cta {
+  padding: 0.65rem 1.1rem;
+  letter-spacing: 0.08em;
+  font-size: 0.75rem;
+}
 
-@media (min-width: 992px) {
+/*
+  Full link row only when brand + 7 labels + CTA fit.
+  Below xl keep the hamburger so nothing is clipped by overflow-x.
+*/
+@media (min-width: 1200px) {
   .mb-nav-desktop { display: flex; }
   .nav-toggle { display: none !important; }
 }
 
+@media (min-width: 1400px) {
+  .mb-navbar .mb-nav-cta {
+    padding: 0.85rem 1.75rem;
+    letter-spacing: 0.14em;
+    font-size: 0.82rem;
+  }
+}
+
 .mb-nav-link {
-  font-size: 0.82rem;
+  font-size: 0.76rem;
   font-weight: 600;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: rgba(255,255,255,0.92);
   padding: 0.5rem 0;
-  margin-inline: 1rem;
+  margin-inline: 0.45rem;
+  white-space: nowrap;
   position: relative;
   transition: color var(--dur-fast) ease;
+}
+@media (min-width: 1400px) {
+  .mb-nav-link {
+    font-size: 0.82rem;
+    letter-spacing: 0.06em;
+    margin-inline: 0.85rem;
+  }
 }
 .mb-navbar.is-scrolled .mb-nav-link,
 .mb-navbar.menu-open .mb-nav-link { color: var(--mb-charcoal); }
@@ -954,21 +983,28 @@ textarea:focus-visible, select:focus-visible {
 /* --------------------------------------------------------------------------
    18b. INTERIOR PAGE HERO (Destinations, Packages, Contact, etc.)
    Shorter than the homepage hero — sets the scene, then gets out of the way.
+   Do not stack a full --space-section after this; the hero already pauses the page.
    -------------------------------------------------------------------------- */
 .page-hero {
   position: relative;
-  height: 62vh;
-  min-height: 460px;
+  height: auto;
+  min-height: 300px;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
   background: var(--mb-black);
+  padding-top: clamp(6.5rem, 14vh, 8rem);
+  padding-bottom: clamp(2rem, 4vw, 3rem);
 }
 .page-hero .hero-media { position: absolute; inset: 0; }
 .page-hero .container-mb {
   position: relative; z-index: 2;
-  padding-bottom: clamp(2.5rem, 5vw, 4rem);
+  padding-bottom: 0;
   color: var(--mb-white);
+}
+/* First content after an interior hero — closer handoff, not another full section breath */
+.page-hero + .section {
+  padding-top: clamp(2.25rem, 4vw, 3.25rem);
 }
 .page-hero .mb-eyebrow { color: var(--mb-gold-light); }
 .page-hero .mb-eyebrow::before { background: var(--mb-gold-light); }
