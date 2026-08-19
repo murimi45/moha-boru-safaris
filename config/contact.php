@@ -19,7 +19,7 @@ return [
     // Digits only, international format, no plus sign — required by wa.me
     'whatsapp' => '254712840452',
 
-    'email' => 'info@mohaborusafaris.com',
+    'email' => 'info@mohaborusafaris.co.ke',
 
     'address' => [
         'line1' => 'Moha Boru Safaris Limited',

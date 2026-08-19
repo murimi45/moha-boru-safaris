@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Moha Boru Safaris Limited | Authentic Kenya Safaris & East Africa Travel')
-@section('description', 'Moha-Boru-Safaris Limited — authentic, memorable and sustainable safari experiences across Kenya and East Africa. Customized wildlife safaris, beach holidays and cultural tours.')
+@section('title', 'Moha Boru Safaris Limited | Authentic Kenya Safaris & Travel')
+@section('description', 'Moha-Boru-Safaris Limited — authentic, memorable and sustainable safari experiences across Kenya. Customized wildlife safaris, beach holidays and cultural tours.')
 
 {{-- Data from HomeController: $destinations, $packages, $testimonials, $services, $gallery --}}
 
@@ -19,7 +19,7 @@
             Where Africa Meets<br><em>Its Finest Hour</em>
         </h1>
         <p class="hero-sub" data-reveal data-reveal-delay="2">
-            Authentic, memorable and sustainable safari experiences across East Africa —
+            Authentic, memorable and sustainable safari experiences across Kenya —
             customized packages that showcase wildlife, landscapes, cultures and
             world-renowned national parks.
         </p>
@@ -51,7 +51,7 @@
                         <img src="{{ asset('images/destinations/amboseli.png') }}" alt="Elephants in Amboseli National Park" loading="lazy">
                     </div>
                     <div class="about-media-badge">
-                        <div class="num">EA</div>
+                        <div class="num">KE</div>
                         <div class="cap">Safaris across Kenya</div>
                     </div>
                 </div>

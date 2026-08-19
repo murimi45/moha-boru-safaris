@@ -8,7 +8,7 @@
 
     {{-- Open Graph / SEO --}}
     <meta property="og:title" content="Moha Boru Safaris Limited">
-    <meta property="og:description" content="Authentic, memorable and sustainable safari experiences across East Africa.">
+    <meta property="og:description" content="Authentic, memorable and sustainable safari experiences across Kenya.">
     <meta property="og:type" content="website">
 
     {{-- Fonts: Fraunces (display) + Manrope (body) --}}
