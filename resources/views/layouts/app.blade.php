@@ -6,6 +6,12 @@
     <title>@yield('title', 'Moha Boru Safaris Limited | Luxury African Safaris')</title>
     <meta name="description" content="@yield('description', 'Moha Boru Safaris Limited crafts bespoke luxury safaris across Kenya — the Maasai Mara, Amboseli, Samburu and beyond. Exceptional guides, exclusive camps, seamless journeys.')">
 
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset('favicon.ico') }}?v={{ filemtime(public_path('favicon.ico')) }}" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('favicon-32x32.png') }}?v={{ filemtime(public_path('favicon-32x32.png')) }}">
+    <link rel="icon" type="image/png" sizes="192x192" href="{{ asset('favicon-192x192.png') }}?v={{ filemtime(public_path('favicon-192x192.png')) }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('apple-touch-icon.png') }}?v={{ filemtime(public_path('apple-touch-icon.png')) }}">
+
     {{-- Open Graph / SEO --}}
     <meta property="og:title" content="Moha Boru Safaris Limited">
     <meta property="og:description" content="Authentic, memorable and sustainable safari experiences across Kenya.">
